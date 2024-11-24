@@ -12,7 +12,7 @@ const initDb = (callback) => {
     console.log("Database is already initd");
     return callback(null, database);
   }
-  // the uri is the .env thing
+  // the uri is the .env thing, needed for dotenv
   MongoClient.connect(process.env.uri)
     .then((client) => {
       database = client;
