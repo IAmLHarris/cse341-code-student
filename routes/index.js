@@ -3,7 +3,7 @@ const routes = require("express").Router();
 const Post = require("../data/post");
 
 routes.get("/", (req, res) => {
-  res.send("Database");
+  res.send("Database :D");
 });
 
 // routes.post("/", (req, res) => {
