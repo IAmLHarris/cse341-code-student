@@ -9,23 +9,10 @@ router.get("/", usersController.getAll);
 router.get("/:id", usersController.getSingle);
 
 // change things
-router.post("/", (req, res) => {
-  const post = new Post({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
-  });
+router.post("/", usersController.addSingle);
+router.put("/:id", usersController.updateSingle);
 
-  post
-    .save()
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      res.json({ dangit: err });
-    });
-});
+// delete things
 
+router.delete("/:id", usersController.deleteSingle);
 module.exports = router;
